@@ -17,6 +17,10 @@
 
 ## About
 
-This project is Python script that converts the first link of a YouTube search query to either an mp3 or mp4. It uses BeautifulSoup4 to parse the HTML and find the YouTube link.
-youtube-dl can be found here: (https://github.com/rg3/youtube-dl)
+This project is Python script that converts the first link of a YouTube search query to either an mp3 or mp4.
+
+It uses BeautifulSoup4 to parse the HTML and find the YouTube link.
+
+youtube-dl can be found here: https://github.com/rg3/youtube-dl
+
 I plan to add a GUI to this project in the future, rather than a command prompt-like interface.
