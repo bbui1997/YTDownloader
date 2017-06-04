@@ -28,12 +28,14 @@ def main():
 def convert_mp4(list):
   for link in list:
     os.system("youtube-dl -o \"downloaded_videos/%(title)s.%(ext)s\" -f 22 --audio-quality 0 " + link)
+    print()
 
 
 # for each link in list, print out on command for youtube-dl to convert to mp3 audio quality
 def convert_mp3(list):
   for link in list:
     os.system("youtube-dl -o \"downloaded_music/%(title)s.%(ext)s\" --extract-audio --audio-format mp3 --audio-quality 0 " + link)
+    print()
 
 
 # get first user input: choose whether we want to download only the mp3 or the whole video
