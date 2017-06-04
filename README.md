@@ -21,6 +21,6 @@ This project is Python script that converts the first link of a YouTube search q
 
 It uses BeautifulSoup4 to parse the HTML and find the YouTube link.
 
-youtube-dl can be found here: https://github.com/rg3/youtube-dl
+It uses youtube-dl to convert the YouTube link to the highest quality possible. youtube-dl can be found here: https://github.com/rg3/youtube-dl
 
 I plan to add a GUI to this project in the future, rather than a command prompt-like interface.

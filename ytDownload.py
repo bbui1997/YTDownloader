@@ -27,6 +27,7 @@ def main():
 # for each link in list, print out on command for youtube-dl to convert to mp4 with the best possible resolution and audio quality
 def convert_mp4(list):
   for link in list:
+    print(link)
     os.system("youtube-dl -o \"downloaded_videos/%(title)s.%(ext)s\" -f 22 --audio-quality 0 " + link)
     print()
 
@@ -34,6 +35,7 @@ def convert_mp4(list):
 # for each link in list, print out on command for youtube-dl to convert to mp3 audio quality
 def convert_mp3(list):
   for link in list:
+    print(link)
     os.system("youtube-dl -o \"downloaded_music/%(title)s.%(ext)s\" --extract-audio --audio-format mp3 --audio-quality 0 " + link)
     print()
 
