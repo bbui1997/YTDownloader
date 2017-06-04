@@ -17,7 +17,9 @@
 
 ## About
 
-This project is Python script that converts the first link of a YouTube search query to either an mp3 or mp4.
+This project is Python script that converts the first link of a YouTube search query to either an mp3 or mp4. 
+
+You can also input the actual YouTube link to convert (generally, querying the YouTube link of a public video on the search bar will return that video as the first result).
 
 It uses BeautifulSoup4 to parse the HTML and find the YouTube link.
 
