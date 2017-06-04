@@ -25,4 +25,4 @@ It uses youtube-dl to convert the YouTube link to the highest quality possible. 
 
 I plan to add a GUI to this project in the future, rather than a command prompt-like interface.
 
-[!Example Runthrough](https://github.com/bbui1997/YTDownloader/blob/master/runthrough.png?raw=true)
+![Example Runthrough](https://github.com/bbui1997/YTDownloader/blob/master/runthrough.png?raw=true)
