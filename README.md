@@ -3,7 +3,7 @@
 ## Prerequisites
 
 1. Clone the repository
-2. Keep the ytDownload.exe file in the same directory as ffmpeg.exe, ffplay.exe, ffprobe.exe, and youtube-dl.exe
+2. Keep the ytDownload.exe file in the same directory as ffmpeg.exe, ffplay.exe, and ffprobe.exe.
 
 ## Usage
 
