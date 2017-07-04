@@ -46,7 +46,6 @@ def convert_mp4(list):
 # for each link in list, print out on command for youtube-dl to convert to mp3 audio quality
 def convert_mp3(list):
   ydl_opts = {
-    'writethumbnail': True,
     'format': 'bestaudio/best',
     'outtmpl': '/downloaded_music/%(title)s.%(ext)s',
     'postprocessors': [
@@ -54,8 +53,7 @@ def convert_mp3(list):
             'key': 'FFmpegExtractAudio',
             'preferredcodec': 'mp3',
             'preferredquality': '192',
-        },
-        {'key': 'EmbedThumbnail'},
+        }
     ],
   }
   for link in list:
@@ -81,9 +79,12 @@ def get_download_list(filetype):
   # get YouTube link from each desired query
   for search in searchList:
     print("\nSearching for: %s" % (search) )
+
+    # If you input a link, just use the link. Don't bother parsing HTML
     if "youtube.com/watch?v=" in search:
         toDownload.append(search)
         break
+
     # parse the html of the query you made from user inputs
     query = urllib.quote(search)
     url = "https://www.youtube.com/results?search_query=" + query
@@ -100,7 +101,7 @@ def get_download_list(filetype):
       if(vid['href'].startswith("/watch")):
         foundLink = True
         toDownload.append("https://www.youtube.com" + vid['href'])
-        print "https://www.youtube.com" + vid['href'] # print out the link in case the user wants to see it
+        print "Found: https://www.youtube.com" + vid['href'] # print out the link in case the user wants to see it
         break # get out of the loop after finding the first valid link
 
     if(not foundLink):
