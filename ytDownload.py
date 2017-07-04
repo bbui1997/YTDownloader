@@ -1,8 +1,8 @@
 from __future__ import unicode_literals
 import urllib # pip install urllib, pip install urllib3 (not sure which one you should have)
 from bs4 import BeautifulSoup #pip install beautifulsoup4
-from urllib import urlopen 
-import sys 
+from urllib import urlopen
+import sys
 import os
 import youtube_dl # pip install youtube-dl
 
@@ -32,7 +32,7 @@ def convert_mp4(list):
   ydl_opts = {
     'outtmpl': '/downloaded_videos/%(title)s.%(ext)s',
     'format': '22',
-  } 
+  }
   for link in list:
     print(link)
     with youtube_dl.YoutubeDL(ydl_opts) as ydl:
@@ -57,7 +57,7 @@ def convert_mp3(list):
         },
         {'key': 'EmbedThumbnail'},
     ],
-  } 
+  }
   for link in list:
     print(link)
     with youtube_dl.YoutubeDL(ydl_opts) as ydl:
@@ -81,7 +81,9 @@ def get_download_list(filetype):
   # get YouTube link from each desired query
   for search in searchList:
     print("\nSearching for: %s" % (search) )
-
+    if "youtube.com/watch?v=" in search:
+        toDownload.append(search)
+        break
     # parse the html of the query you made from user inputs
     query = urllib.quote(search)
     url = "https://www.youtube.com/results?search_query=" + query
@@ -102,7 +104,7 @@ def get_download_list(filetype):
         break # get out of the loop after finding the first valid link
 
     if(not foundLink):
-      print "No results for: {}".format(search) 
+      print "No results for: {}".format(search)
 
   # return the download list
   return toDownload
@@ -116,9 +118,9 @@ def get_inputs(filetype):
     type = filetype
 
   search_queries = []
-  print "Press ctrl+c to quit without downloading anything" 
+  print "Press ctrl+c to quit without downloading anything"
   print "Enter a list of searches that you want to download and convert to %s" % (filetype)
-  print "Type and enter \"start download\" or \".\" to stop inputing searches and begin downloading your list of songs\n" 
+  print "Type and enter \"start download\" or \".\" to stop inputing searches and begin downloading your list of songs\n"
 
   # prompts input until user enters anything
   search_query = raw_input("Enter your search query: ")
