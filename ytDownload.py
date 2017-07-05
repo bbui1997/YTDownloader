@@ -81,7 +81,8 @@ def get_download_list(filetype):
     print("\nSearching for: %s" % (search) )
 
     # If you input a link, just use the link. Don't bother parsing HTML
-    if "youtube.com/watch?v=" in search:
+    #if "youtube.com/watch?v=" in search:
+    if ".com" in search:
         toDownload.append(search)
         break
 
